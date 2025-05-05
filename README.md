@@ -4,7 +4,7 @@
 
 ```bash
 - VSCode -> Show Command Palette (Ctrl+Shift+P)
-- Dev Containers: Open Workspace in Container
+- Dev Containers: Reopen in Container
 ```
 
 ## Start the Jupyter Notebook
