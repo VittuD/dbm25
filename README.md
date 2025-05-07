@@ -1,5 +1,8 @@
 # dbm25
 
+## Data set up
+Download 'Data1.zip' and 'Data2.zip' from the university's Moodle page and extract them into the `data` folder. The data is not included in the repository due to its size.
+
 ## Start the devcontainer
 
 ```bash
