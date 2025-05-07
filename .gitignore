@@ -1,6 +1,9 @@
 # python checkpoints
 .ipynb_checkpoints
-# folder data/ and everything in it
-data/
-# Keep the gitkeep in data/
+
+# Exclude everything in data folder
+data/*
+# Re-include the data folder
+!data/
+# But keep .gitkeep tracked
 !data/.gitkeep
