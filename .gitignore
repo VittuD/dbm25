@@ -7,3 +7,7 @@ data/*
 !data/
 # But keep .gitkeep tracked
 !data/.gitkeep
+
+
+# MacOS stuff :)
+**/.DS_Store
