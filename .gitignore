@@ -11,3 +11,5 @@ data/*
 
 # MacOS stuff :)
 **/.DS_Store
+
+task_1_2/__pycache__

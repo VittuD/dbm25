@@ -1,11 +1,12 @@
 import os
 import cv2
 import torch
+import torch.nn as nn
 import grayscale_moments
 import resnet
 import hog
 
-def extract_features(image_path, model):
+def extract_features(image_path: os.path, model: nn.Module) -> dict:
     """
     Extract features from a single .jpg image.
 
