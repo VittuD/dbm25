@@ -6,16 +6,20 @@ def preprocess_image(image: torch.Tensor) -> torch.Tensor:
     """
     Preprocess the image for ResNet model.
     Args:
-        image: A tensor of shape [H, W, C] (height, width, channels)
+        image: A tensor of shape [H, W] (height, width, channels)
     Returns:
         A tensor of shape [1, C, 224, 224] (batch size, channels, height, width)
     """
     # Resize the image to 224x224
     image = cv2.resize(image, (224, 224))
-    # Convert the image to a tensor
-    image = torch.tensor(image).permute(2, 0, 1).float()
+    # The image is grayscale, so we need to convert it to 3 channels
+    image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
+    # Transpose the image to [C, H, W]
+    image = image.transpose(2, 0, 1)
     # Normalize the image
     image = (image - 127.5) / 127.5
+    # Convert the image to a tensor
+    image = torch.from_numpy(image).float()
     # Add a batch dimension
     image = image.unsqueeze(0)
     return image
