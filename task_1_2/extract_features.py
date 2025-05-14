@@ -37,16 +37,15 @@ def extract_features(image_path: os.path, model: nn.Module) -> dict:
     print(f'Processing {image_path}')
 
     # Load the image
-    img = cv2.imread(image_path, cv2.IMREAD_COLOR)
-    if img is None:
+    grayscale_img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    if grayscale_img is None:
         print("Failed to load image.")
         return None
-
-    grayscale_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    color_moments = grayscale_moments.moments(img)
+    
+    color_moments = grayscale_moments.moments(grayscale_img)
     hog_features = hog.hog(grayscale_img)
 
-    preprocessed_img = resnet.preprocess_image(img)
+    preprocessed_img = resnet.preprocess_image(grayscale_img)
     resnet_features = resnet.extract_layer_features(
         model, preprocessed_img, layer_names=['avgpool', 'layer3', 'fc']
     )
