@@ -13,3 +13,5 @@ data/*
 **/.DS_Store
 
 task_1_2/__pycache__
+kaggle/*
+task_1_2/__pycache__/*
