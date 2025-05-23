@@ -34,7 +34,7 @@ def extract_features(image_path: os.path, model: nn.Module) -> dict:
     class_name = parts[0] + '_' + parts[1]
 
     image_path = os.path.abspath(image_path)
-    print(f'Processing {image_path}')
+    # print(f'Processing {image_path}')
 
     # Load the image
     grayscale_img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
